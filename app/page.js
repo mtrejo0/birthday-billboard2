@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Image from 'next/image';
 
 export default function Home() {
   const [selectedDate, setSelectedDate] = useState('');
@@ -68,14 +67,7 @@ export default function Home() {
             value={selectedDate}
             onChange={handleDateChange}
             max={new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().split('T')[0]}
-            className="px-3 py-2 rounded border border-gray-300 dark:border-gray-700 bg-background [color-scheme:light] [&::-webkit-calendar-picker-indicator]:invert"
-            style={{
-              caretColor: 'transparent',
-              cursor: 'pointer',
-              WebkitCalendarPickerIndicator: {
-                opacity: 1
-              }
-            }}
+            className="px-3 py-2 rounded border border-gray-300 dark:border-gray-700 bg-black text-white [color-scheme:light] [&::-webkit-calendar-picker-indicator]:!invert [&::-webkit-calendar-picker-indicator]:opacity-100 [&::-webkit-calendar-picker-indicator]:hover:scale-110 [&::-webkit-calendar-picker-indicator]:transition-transform [&::-webkit-calendar-picker-indicator]:cursor-pointer"
           />
           <button 
             type="submit"
